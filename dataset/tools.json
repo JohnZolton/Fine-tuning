@@ -1,0 +1,166 @@
+{
+  "tools": [
+    {
+      "name": "weather",
+      "description": "Get weather information for a location",
+      "parameters": {
+        "day": {
+          "type": "string",
+          "description": "The day for which to get weather information (today, tomorrow, etc.)"
+        },
+        "location": {
+          "type": "string",
+          "description": "The location for which to get weather information"
+        }
+      }
+    },
+    {
+      "name": "research",
+      "description": "Conduct research on a topic",
+      "parameters": {
+        "query": {
+          "type": "string",
+          "description": "The research query or topic"
+        },
+        "depth": {
+          "type": "string",
+          "description": "The depth of research (basic, detailed, comprehensive)",
+          "enum": ["basic", "detailed", "comprehensive"]
+        }
+      }
+    },
+    {
+      "name": "trip_planning",
+      "description": "Plan a trip with itinerary details",
+      "parameters": {
+        "destination": {
+          "type": "string",
+          "description": "The destination for the trip"
+        },
+        "duration": {
+          "type": "integer",
+          "description": "The duration of the trip in days"
+        },
+        "interests": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of interests or activities for the trip"
+        }
+      }
+    },
+    {
+      "name": "general_qa",
+      "description": "Answer general questions on various topics",
+      "parameters": {
+        "question": {
+          "type": "string",
+          "description": "The question to be answered"
+        }
+      }
+    },
+    {
+      "name": "schedule_meeting",
+      "description": "Schedule a meeting with specified participants and time",
+      "parameters": {
+        "title": {
+          "type": "string",
+          "description": "The title of the meeting"
+        },
+        "participants": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of participants' names or emails"
+        },
+        "time": {
+          "type": "string",
+          "description": "The proposed time for the meeting"
+        },
+        "duration": {
+          "type": "integer",
+          "description": "The duration of the meeting in minutes"
+        }
+      }
+    },
+    {
+      "name": "send_email",
+      "description": "Send an email to specified recipients",
+      "parameters": {
+        "to": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of recipient email addresses"
+        },
+        "subject": {
+          "type": "string",
+          "description": "The subject of the email"
+        },
+        "body": {
+          "type": "string",
+          "description": "The body content of the email"
+        }
+      }
+    },
+    {
+      "name": "set_reminder",
+      "description": "Set a reminder for a specific task or event",
+      "parameters": {
+        "task": {
+          "type": "string",
+          "description": "The task or event to be reminded about"
+        },
+        "time": {
+          "type": "string",
+          "description": "When to trigger the reminder"
+        }
+      }
+    },
+    {
+      "name": "calculate",
+      "description": "Perform mathematical calculations",
+      "parameters": {
+        "expression": {
+          "type": "string",
+          "description": "The mathematical expression to evaluate"
+        }
+      }
+    },
+    {
+      "name": "translate",
+      "description": "Translate text between languages",
+      "parameters": {
+        "text": {
+          "type": "string",
+          "description": "The text to be translated"
+        },
+        "source_language": {
+          "type": "string",
+          "description": "The source language of the text"
+        },
+        "target_language": {
+          "type": "string",
+          "description": "The target language for translation"
+        }
+      }
+    },
+    {
+      "name": "news",
+      "description": "Get latest news on a topic",
+      "parameters": {
+        "topic": {
+          "type": "string",
+          "description": "The topic or category for news"
+        },
+        "limit": {
+          "type": "integer",
+          "description": "The number of news articles to retrieve"
+        }
+      }
+    }
+  ]
+}

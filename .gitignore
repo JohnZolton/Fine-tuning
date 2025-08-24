@@ -1,0 +1,4 @@
+.env
+Qwen2.5-0.5B-Instruct/
+tool_sft/
+wandb/
