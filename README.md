@@ -1,4 +1,4 @@
-# Fine-tuning
+# Fine-tuning - LoRA
 
 Fine tuning a LLaMA model on tool-use question/response pairs
 
@@ -6,9 +6,18 @@ Fine tuning a LLaMA model on tool-use question/response pairs
 
 Fine-tuning means we take a pretrained LLaMA and keep training it on a smaller, task-specific dataset.
 
-At the technical level this is just backpropagating through the model layers. We’re not training from scratch. We reuse most of the pretrained weights and nudge them toward our dataset distribution. That’s why it’s efficient and doable on a single GPU.
+We’re not training from scratch. We reuse most of the pretrained weights and nudge them toward our dataset distribution. That’s why it’s efficient and doable on a single GPU.
 
-This is a full fine tune, so every weight is adjusted during training. Contrasted with LoRA, where small matrices are inserted and trained.
+LoRA stands for Low-Rank Adaptation, where small matrices are inserted and trained. (peft = parameter efficient fine tuning)
+
+```python
+from peft import LoraConfig, get_peft_model
+model = get_peft_model(model, lora_config)
+```
+
+This replaces a small subset of weight matrices (q_proj and v_proj) with LoRA adapters.
+
+During training, only the LoRA adapter parameters get updated.
 
 Chose Qwen 2.5 0.5B to fine tune because Qwen is great and tiny.
 
